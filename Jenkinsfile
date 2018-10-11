@@ -4,7 +4,7 @@ pipeline {
         stage('Build') {
             steps {
                 sh 'mvn -B -DskipTests clean package'
-                sh 'echo $USER'
+                sh 'echo c | sudo -S chef-client'
             }
         }
         stage('Test') {
