@@ -7,14 +7,12 @@ pipeline {
     }
     stages {
         stage('Build') {
-            agent {label 'test'}
             steps {
                 sh 'mvn -B -DskipTests clean package'
-                sh 'echo c | sudo -S chef-client'
+                sh 'echo $USER'
             }
         }
         stage('Test') {
-            agent {label 'test'}
             steps {
                 sh 'mvn test'
             }
@@ -25,7 +23,6 @@ pipeline {
             }
         }
         stage('Deliver') { 
-            agent {label 'test'}
             steps {
                 sh './jenkins/scripts/deliver.sh' 
             }
