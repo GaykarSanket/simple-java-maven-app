@@ -6,7 +6,6 @@ pipeline {
     }
     stages {
         stage('Build') {
-            agent
             steps {
                 sh 'mvn -B -DskipTests clean package'
                 sh 'echo $USER'
