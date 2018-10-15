@@ -1,8 +1,8 @@
 pipeline {
     agent { 
         docker {
-            image 'bibinwilson/jenkins-slave'  
-        } 
+            image 'maven:3-alpine'  
+        }
     }
     stages {
         stage('Build') {
