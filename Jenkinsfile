@@ -1,6 +1,6 @@
 pipeline {
     agent { 
-        label 'maven:3-alpine'
+        label 'test'
     }
     stages {
         stage('Build') {
