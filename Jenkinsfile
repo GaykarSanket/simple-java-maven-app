@@ -5,7 +5,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh "echo 'c' | ssh -tt test@10.71.71.168"
+                sh 'sshpass -p c ssh -tt test@10.71.71.168'
             }
         }
         
